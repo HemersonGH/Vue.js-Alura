@@ -9,7 +9,8 @@ Curso De Vue.js Alura
     <li>Criar do zero um novo projeto</li>
     <li>Estrutura fundamental do projeto</li>
     <li>Arquivos de template .vue</li>
-    <li>Estrutura de um template</li><li>relação entre index.html, main.js e App.vue</li>
+    <li>Estrutura de um template</li>
+    <li>Relação entre index.html, main.js e App.vue</li>
     <li>Como renderização de um template é feita</li>
     <li>Data binding unidirecional através de interpolação</li>
     <li>O mecanismo de live reloading</li>
