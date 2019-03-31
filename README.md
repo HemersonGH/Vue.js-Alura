@@ -1,4 +1,4 @@
-# Vue.js-Alura
+# Vue.js - Alura
 
 Curso De Vue.js Alura
 
