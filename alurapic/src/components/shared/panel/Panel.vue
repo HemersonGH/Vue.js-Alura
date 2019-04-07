@@ -10,7 +10,7 @@ import Painel from './components/shared/panel/Panel.vue';
 
 export default {
   components: {
-    myPanel : Panel
+    'myPanel' : Panel
   },
 
   props: ['title']
