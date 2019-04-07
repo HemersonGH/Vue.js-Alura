@@ -1,23 +1,18 @@
 <template>
   <div class="panel">
-    <h2 class="panelTitle">{{ titulo }}</h2>
-    <div class="panelContent"></div>
+    <h2 class="panelTitle">{{ title }}</h2>
+    <slot class="panelContent">
+    </slot>
   </div>
 </template>
 
 <script>
-import Painel from './components/shared/panel/Panel.vue';
-
 export default {
-  components: {
-    'myPanel' : Panel
-  },
-
   props: ['title']
 };
 </script>
 
-<style>
+<style scoped>
   .panel {
     padding: 0 auto;
     border: solid 2px grey;
@@ -30,12 +25,25 @@ export default {
     text-align: center;
   }
 
-  .panelTitle .panelContent {
+  .panelContent {
     text-align: center;
     border: solid 2px;
     background: lightblue;
     margin: 0 0 15px 0;
     padding: 10px;
     text-transform: uppercase;
+  }
+
+  .panelTitle {
+    text-align: center;
+    border: solid 2px;
+    background: lightblue;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  * {
+    box-shadow: 5px 5px 5px;
   }
 </style>

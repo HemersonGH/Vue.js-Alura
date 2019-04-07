@@ -37,14 +37,14 @@ Curso De Vue.js Alura
     <li>Enxergar ainda melhor o poder do data binding.</li>
 </ul>
 
-<p>Capítulo III:</p>
+<p>Capítulo IV:</p>
 
 <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>A estilizar um componente;</li>
+    <li>Boa prática na organização do projeto;</li>
+    <li>A criar um componente reutilizável;</li>
+    <li>Como passar parâmetro para um componente (comunicação);</li>
+    <li>O conceito de slot e preservação de conteúdo;</li>
+    <li>Importação de um componente em outro;</li>
+    <li>A definir e delimitar o escopo de estilos ao componente no qual foram declarados.</li>  
 </ul>
