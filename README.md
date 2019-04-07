@@ -23,3 +23,16 @@ Curso De Vue.js Alura
     <li>Atalho para v-bind;</li>
     <li>A diretiva v-for.</li>
 </ul>
+
+<p>Capítulo III:</p>
+
+<ul>
+    <li>A subir uma API para ser consumida pela nossa aplicação;</li>
+    <li>A entender a separação entre cliente e API;</li>
+    <li>A baixar e registrar o módulo VueResource;</li>
+    <li>O suporte à lifecycle hooks que todo componente possui;</li>
+    <li>Que recursos no global view object ficam disponíveis para todas as outras view;</li>
+    <li>Consumir uma API através de $http;</li>
+    <li>O conceito de promise;</li>
+    <li>Enxergar ainda melhor o poder do data binding.</li>
+</ul>
