@@ -19,3 +19,11 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# Paths API
+api/.tmp
+api/.DS_Store
+api/.DS_Store?
+api/node_modules/
+api/.dpl/
+
