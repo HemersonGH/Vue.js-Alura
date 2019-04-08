@@ -1,9 +1,7 @@
-<template>
-  <div class="panel">
-    <h2 class="panelTitle">{{ title }}</h2>
-    <slot class="panelContent">
-    </slot>
-  </div>
+<template lang="pug">
+  .panel
+    h2.panelTitle {{ title }}
+    slot.panelContent
 </template>
 
 <script>
@@ -25,16 +23,7 @@ export default {
     text-align: center;
   }
 
-  .panelContent {
-    text-align: center;
-    border: solid 2px;
-    background: lightblue;
-    margin: 0 0 15px 0;
-    padding: 10px;
-    text-transform: uppercase;
-  }
-
-  .panelTitle {
+  .panel .panelTitle {
     text-align: center;
     border: solid 2px;
     background: lightblue;
