@@ -1,12 +1,20 @@
 <template lang="pug">
   .panel
-    h2.panelTitle {{ title }}
-    slot.panelContent
+    h2.panelTitle(@click="visible = !visible") {{ title }}
+    transition(name='panel-fade')
+      .div.panelContent(v-show="visible")
+        slot
 </template>
 
 <script>
 export default {
-  props: ['title']
+  props: ['title'],
+
+  data() {
+    return {
+      visible: true,
+    };
+  },
 };
 </script>
 
@@ -35,4 +43,13 @@ export default {
   * {
     box-shadow: 5px 5px 5px;
   }
+
+  .panel-fade-enter, .panel-fade-leave-active {
+    opacity: 0;
+  }
+
+  .panel-fade-enter-active, .panel-fade-leave-active {
+    transition: opacity 400ms;
+  }
+
 </style>
