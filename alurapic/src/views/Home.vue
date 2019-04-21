@@ -6,8 +6,8 @@
       placeholder='Informe o critério de busca',
       @input="filter=$event.target.value"
     )
-    .ul.listPhotos
-      .li.listPhotosItens(
+    ul.listPhotos
+      li.listPhotosItens(
         v-for="photo of photosWithFilter" :key="photo"
       )
         Panel(
@@ -15,19 +15,35 @@
         )
           ImagemResponsiva(
             :url='photo.url',
-            :title='photo.titulo'
+            :title='photo.titulo',
+            v-my-Transform:scale.animate='1.2'
+          )
+          Botao(
+            typeBtn='button',
+            labelBtn='Delete',
+            @buttonActive='remove(photo)',
+            :actionConfirm='true',
+            styleBtn='danger'
           )
 </template>
 
 <script>
 import Panel from '@/components/shared/Panel.vue';
 import ImagemResponsiva from '@/components/shared/ImagemResponsiva.vue';
+import Botao from '@/components/shared/Botao.vue';
+// import transform from '@/directives/Transform';
 
 export default {
   components: {
     Panel,
     ImagemResponsiva,
+    Botao,
   },
+
+  // directives: {
+  //   Transform,
+  // },
+
   data() {
     return {
       title: 'Alura Pictures',
@@ -35,6 +51,7 @@ export default {
       filter: '',
     };
   },
+
   computed: {
     photosWithFilter() {
       if (this.filter) {
@@ -45,6 +62,13 @@ export default {
       return this.photos;
     },
   },
+
+  methods: {
+    remove(photo) {
+      alert('Are you sure you want to delete ' + photo.titulo + '?');
+    },
+  },
+
   created() {
     this.$http
       .get('http://localhost:3000/v1/fotos')

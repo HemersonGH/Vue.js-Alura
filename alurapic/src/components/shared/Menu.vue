@@ -16,7 +16,6 @@ export default {
       required: true,
     },
   },
-  /* to='route.path ? route.path : '/' ' */
 };
 </script>
 

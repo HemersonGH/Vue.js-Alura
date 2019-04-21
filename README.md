@@ -73,3 +73,13 @@
         <li> Executar efeito de transição na troca de páginas; </li>
         <li> A validar propriedades em um componente.  </li>
     </ul>
+
+
+<p>Capítulo VII:</p>
+    <ul>
+        <li> A criar um novo componente reutilizável; </li>
+        <li> A criar nossos próprios eventos; </li>
+        <li> A aplicar classes condicionalmente; </li>
+        <li> A diferença do valor passado para a propriedade de um componente sem bind e com bind; </li>
+        <li> A validar propriedades de componentes. </li>
+    </ul>

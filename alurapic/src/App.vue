@@ -42,6 +42,6 @@ export default {
   }
 
   .page-enter-active, .page-leave-active {
-    transition: opacity 400ms;
+    transition: opacity 300ms;
   }
 </style>

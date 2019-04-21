@@ -1,8 +1,14 @@
 <template lang="pug">
-  .panel
-    h2.panelTitle(@click="visible = !visible") {{ title }}
-    transition(name='panel-fade')
-      .div.panelContent(v-show="visible")
+  div.panel
+    h2.panelTitle(
+      @click="visible = !visible"
+    ) {{ title }}
+    transition(
+      name='panel-fade'
+    )
+      div.panelContent(
+        v-show="visible"
+      )
         slot
 </template>
 
@@ -50,5 +56,9 @@ export default {
 
   .panel-fade-enter-active, .panel-fade-leave-active {
     transition: opacity 400ms;
+  }
+
+  .panelContent {
+    overflow: hidden;
   }
 </style>
