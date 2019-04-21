@@ -58,3 +58,18 @@
         <li> Como realizar transições com auxílio do componente transition; </li>
         <li> A criar mais um componente. </li>
     </ul>
+
+<p>Capítulo VI:</p>
+    <ul>
+        <li> A criar um novo componente/página; </li>
+        <li> O conceito de Single Page Application; </li>
+        <li> Extrair de App.vue um componente de página, separando responsabilidades; </li>
+        <li> A baixar e registrar o módulo VueRouter; </li>
+        <li> Criar rotas da aplicação; </li>
+        <li> O componente router-view; </li>
+        <li> O modo history vs hash; </li>
+        <li> A criar um menu baseado em nossas configurações de rota; </li>
+        <li> A tornar o menu um componente; </li>
+        <li> Executar efeito de transição na troca de páginas; </li>
+        <li> A validar propriedades em um componente.  </li>
+    </ul>

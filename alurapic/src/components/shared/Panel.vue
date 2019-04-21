@@ -51,5 +51,4 @@ export default {
   .panel-fade-enter-active, .panel-fade-leave-active {
     transition: opacity 400ms;
   }
-
 </style>

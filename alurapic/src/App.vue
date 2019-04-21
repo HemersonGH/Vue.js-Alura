@@ -1,55 +1,31 @@
 <template lang="pug">
-  .div.body
-    h1.center {{ title }}
-    input.filter(
-      type='search',
-      placeholder='Informe o critério de busca',
-      @input="filter=$event.target.value"
+  div.body
+    Menu(
+      :routes='routes'
     )
-    .ul.listPhotos
-      .li.listPhotosItens(
-        v-for="photo of photosWithFilter" :key="photo"
-      )
-        Panel(
-          :title="photo.titulo"
-        )
-          ImagemResponsiva(
-            :url='photo.url',
-            :title='photo.titulo'
-          )
+    transition(name='page')
+      router-view
 </template>
 
 <script>
-import Panel from './components/shared/Panel.vue';
-import ImagemResponsiva from './components/shared/ImagemResponsiva.vue';
+import router from '@/router';
+import Menu from '@/components/shared/Menu.vue';
 
 export default {
   components: {
-    Panel,
-    ImagemResponsiva,
+    Menu,
   },
+
   data() {
     return {
-      title: 'Alura Pictures',
-      photos: [],
-      filter: '',
+      router,
+      routes:
+      [
+        { path: '/', name: 'Home' },
+        { path: '/cadastro', name: 'Cadastro' },
+        { path: '/about', name: 'About' },
+      ],
     };
-  },
-  computed: {
-    photosWithFilter() {
-      if (this.filter) {
-        const exp = new RegExp(this.filter.trim(), 'i');
-
-        return this.photos.filter(foto => exp.test(foto.titulo));
-      }
-      return this.photos;
-    },
-  },
-  created() {
-    this.$http
-      .get('http://localhost:3000/v1/fotos')
-      .then(res => res.json())
-      .then(fotos => (this.photos = fotos), err => console.log(err));
   },
 };
 </script>
@@ -61,20 +37,11 @@ export default {
     margin: 0 auto;
   }
 
-  .center {
-    text-align: center;
+  .page-enter, .page-leave-active {
+    opacity: 0;
   }
 
-  .listPhotos {
-    list-style: none;
-  }
-
-  .listPhotos .listPhotosItens {
-    display: inline-block;
-  }
-
-  .filter {
-    display: block;
-    width: 100%;
+  .page-enter-active, .page-leave-active {
+    transition: opacity 400ms;
   }
 </style>
