@@ -13,21 +13,35 @@
       div.control
         label(
           for='title'
-        ) Título:
+        ) Título: *
         input(
           id="title",
+          name="title",
+          data-vv-as='Título',
           autocomplete="off",
-          v-model.lazy='photo.title'
+          v-model.lazy='photo.title',
+          v-validate,
+          data-vv-rules='required|min:3|max:50'
         )
+        span.error(
+          v-show="errors.has('title')"
+        ) {{ errors.first('title') }}
       div.control
         label(
           for='url',
-        ) URL:
+        ) URL: *
         input(
           id='url',
+          name='url',
+          data-vv-as='URL',
           autocomplete='off',
-          v-model.lazy='photo.url'
+          v-model.lazy='photo.url',
+          v-validate,
+          data-vv-rules='required|min:3|max:50'
         )
+        span.error(
+          v-show="errors.has('url')"
+        ) {{ errors.first('url') }}
         ImagemResponsiva(
           v-show='photo.url && photo.title',
           :url='photo.url',
@@ -75,19 +89,24 @@ export default {
     return {
       photo: new Photo(),
       id: this.$route.params.id,
-    }
+    };
   },
 
   methods: {
     addPhoto() {
-      this.service
-        .add(this.photo)
-        .then(() => {
-          if (this.id) { this.$router.push({ name: 'Home'}); }
-          this.photo = new Photo()
-        }, 
-        err => console.log(err));
-    }
+      this.$validator
+        .validateAll()
+        .then(sucess => {
+          if (sucess) {
+            this.service
+              .add(this.photo)
+              .then(() => {
+                if (this.id) this.$router.push({ name: 'Home'});
+                this.photo = new Photo();
+              }, err => console.log(err));
+          }
+        });
+    },
   },
 
   created() {
@@ -98,7 +117,7 @@ export default {
         .search(this.id)
         .then(photo => this.photo = photo);
     }
-  }
+  },
 };
 </script>
 
@@ -129,5 +148,9 @@ export default {
 
   .btnRight {
     float: right;
+  }
+
+  .error {
+    color: red;
   }
 </style>

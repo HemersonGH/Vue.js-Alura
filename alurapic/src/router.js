@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Cadastro from './views/Cadastro.vue';
 import About from './views/About.vue';
+
+const Cadastro = () => System.import('./views/Cadastro.vue');
 
 Vue.use(Router);
 
