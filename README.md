@@ -105,3 +105,15 @@
         <li> A isolar $resource em serviços; </li>
         <li> Rotas nomeadas e suas vantagens. </li>
     </ul>
+
+<p>Capítulo III:</p>
+    <ul>
+        <li> A criar rotas parametrizadas; </li>
+        <li> A passar parâmetros para router-link; </li>
+        <li> A extrair parâmetros de rota em um componente com $route.params; </li>
+        <li> A realizarmos navegação programaticamente; </li>
+        <li> A implementar uma lógica de alteração; </li>
+        <li> Boas práticas com mensagens e tratamento de erros; </li>
+        <li> As diretivas v-if e v-else; </li>
+        <li> Diferença ente v-if/v-else e v-show. </li>
+    </ul>

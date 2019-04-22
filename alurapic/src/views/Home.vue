@@ -2,8 +2,8 @@
   div
     h1.center {{ title }}
     p.center(
-      v-show='menssage'
-    ) {{ menssage }}
+      v-show='message'
+    ) {{ message }}
     input.filter(
       type='search',
       placeholder='Informe o critério de busca',
@@ -11,7 +11,7 @@
     )
     ul.listPhotos
       li.listPhotosItens(
-        v-for="photo of photosWithFilter" :key="photo"
+        v-for='photo of photosWithFilter' :key='photo._id'
       )
         Panel(
           :title="photo.title"
@@ -21,6 +21,13 @@
             :title='photo.title',
             v-my-Transform:scale.animate='1.2'
           )
+          router-link(
+            :to="{ name: 'Altera', params: { id: photo._id,} }"
+          )
+            Botao(
+              typeBtn='button',
+              labelBtn='Edit',
+            )
           Botao(
             typeBtn='button',
             labelBtn='Delete',
@@ -53,7 +60,7 @@ export default {
       title: 'Alura Pictures',
       photos: [],
       filter: '',
-      menssage: '',
+      message: '',
     };
   },
 
@@ -73,15 +80,12 @@ export default {
       this.service
         .delete(photo._id)
         .then(
-            () => {
-              let index = this.photos.indexOf(photo);
-              this.photos.splice(index, 1);
-              this.menssage = 'Foto removida com sucesso'
+          () => {
+            let index = this.photos.indexOf(photo);
+            this.photos.splice(index, 1);
+            this.message = 'Foto removida com sucesso'
           },
-          err => {
-            this.menssage = 'Não foi possível remover a foto';
-            console.log(err);
-          }
+          err => this.message = err.message
         );
     },
   },
@@ -91,7 +95,13 @@ export default {
 
     this.service
       .list()
-      .then(fotos => this.photos = fotos, err => console.log(err));
+      .then(
+        fotos => this.photos = fotos, 
+        err => {
+          console.log(err);
+          this.message = err.message;
+        }
+      );
   },
 };
 </script>

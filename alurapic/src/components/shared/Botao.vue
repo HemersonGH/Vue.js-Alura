@@ -49,19 +49,21 @@ export default {
 <style scoped>
   .btn {
       display: inline-block;
-      padding: 10px;
-      border-radius: 3px;
-      margin: 10px;
+      padding: 5px;
+      border-radius: 1px;
+      margin: 5px;
       font-size: 1.2em;
   }
 
   .btn-danger {
       background: rgb(173, 32, 32);
       color: white;
+      float: right;
   }
 
   .btn-default {
       background: rgb(6, 98, 185);
       color: white;
+      float: left;
   }
 </style>

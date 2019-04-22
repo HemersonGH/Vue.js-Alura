@@ -21,8 +21,9 @@ export default {
       router,
       routes:
       [
-        { path: '/', name: 'Home', menu: true},
+        { path: '/', name: 'Home', menu: true },
         { path: '/cadastro', name: 'Cadastro', menu: true },
+        { path: '/cadastro/:id', name: 'Altera', menu: false },
         { path: '/about', name: 'About', menu: true },
         { path: '*', menu: false },
       ].filter(route => route.menu),

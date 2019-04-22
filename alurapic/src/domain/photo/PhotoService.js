@@ -4,16 +4,39 @@ export default class PhotoService {
   }
 
   add(photo) {
+    if (photo._id) {
+      return this._resource.update({ id: photo._id }, photo);
+    } 
+
     return this._resource.save(photo);
   }
 
   list() {
     return this._resource
       .query()
-      .then(res => res.json());
+      .then(
+        res => res.json(),
+        err => {
+          console.log(err);
+          throw new Error('Não foi possível obter as fotos. Tente mais tarde...');
+        }
+      );
   }
 
   delete(id) {
-    return this._resource.delete({ id });
+    return this._resource.delete({ id })
+    .then(
+      null, 
+      err => {
+        console.log(err);
+        throw new Error('Não foi possível remover a foto. Tente mais tarde...');
+      }
+    );
+  }
+
+  search(id) {
+    return this._resource
+      .get({ id })
+      .then(res => res.json());
   }
 }

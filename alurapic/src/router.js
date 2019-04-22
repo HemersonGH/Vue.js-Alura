@@ -23,6 +23,12 @@ export default new Router({
       menu: true,
     },
     {
+      path: '/cadastro/:id',
+      name: 'Altera',
+      component: Cadastro,
+      menu: false,
+    },
+    {
       path: '/about',
       name: 'About',
       component: About,

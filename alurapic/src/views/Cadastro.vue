@@ -1,6 +1,11 @@
 <template lang="pug">
   div
-    h2.center Cadastro
+    h2.center(
+      v-if='!id'
+    ) Cadastro
+    h2.center(
+      v-else
+    ) Alterando: {{ photo.title }}
     h2.center
     form(
       @submit.prevent='addPhoto()'
@@ -69,6 +74,7 @@ export default {
   data() {
     return {
       photo: new Photo(),
+      id: this.$route.params.id,
     }
   },
 
@@ -76,12 +82,22 @@ export default {
     addPhoto() {
       this.service
         .add(this.photo)
-        .then(() => this.photo = new Photo(), err => console.log(err));
+        .then(() => {
+          if (this.id) { this.$router.push({ name: 'Home'}); }
+          this.photo = new Photo()
+        }, 
+        err => console.log(err));
     }
   },
 
   created() {
     this.service = new PhotoService(this.$resource);
+
+    if (this.id) {
+      this.service
+        .search(this.id)
+        .then(photo => this.photo = photo);
+    }
   }
 };
 </script>
