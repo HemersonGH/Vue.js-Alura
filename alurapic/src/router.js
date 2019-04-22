@@ -14,16 +14,24 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      menu: true,
     },
     {
       path: '/cadastro',
       name: 'Cadastro',
       component: Cadastro,
+      menu: true,
     },
     {
       path: '/about',
       name: 'About',
       component: About,
+      menu: true,
+    },
+    {
+      path: '*',
+      component: Home,
+      menu: false,
     },
   ],
 });

@@ -9,6 +9,7 @@ import './directives/Trasnform';
 Vue.use(VueResource);
 
 Vue.config.productionTip = false;
+Vue.http.options.root = 'http://localhost:3000/';
 
 new Vue({
   router,

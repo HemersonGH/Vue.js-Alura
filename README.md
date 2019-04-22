@@ -89,9 +89,19 @@
 #### Módulo II
 <p>Capítulo I:</p>
     <ul>
-        <li> A capturar dados inseridos em um formulário;</li>
-        <li> O papel do modificador prevent na submissão de um formulário;</li>
-        <li> A utilizar a diretiva v-model para two-way data binding;</li>
-        <li> A criar e a utilizar modelos;</li>
-        <li> Enviar dados para uma API REST através do método post de $http.</li>
+        <li> A capturar dados inseridos em um formulário; </li>
+        <li> O papel do modificador prevent na submissão de um formulário; </li>
+        <li> A utilizar a diretiva v-model para two-way data binding; </li>
+        <li> A criar e a utilizar modelos; </li>
+        <li> Enviar dados para uma API REST através do método post de $http. </li>
+    </ul>
+
+<p>Capítulo II:</p>
+    <ul>
+        <li> A usar o método delete para excluir recursos através da nossa API; </li>
+        <li> A sincronizar o estado da exclusão da API no cliente; </li>
+        <li> A aproveitar Vue.http.options.root e facilitar a manutenção; </li>
+        <li> A utilizar $resource; </li>
+        <li> A isolar $resource em serviços; </li>
+        <li> Rotas nomeadas e suas vantagens. </li>
     </ul>

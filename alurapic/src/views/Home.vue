@@ -1,6 +1,9 @@
 <template lang="pug">
   div
     h1.center {{ title }}
+    p.center(
+      v-show='menssage'
+    ) {{ menssage }}
     input.filter(
       type='search',
       placeholder='Informe o critério de busca',
@@ -32,6 +35,7 @@ import Panel from '@/components/shared/Panel.vue';
 import ImagemResponsiva from '@/components/shared/ImagemResponsiva.vue';
 import Botao from '@/components/shared/Botao.vue';
 // import transform from '@/directives/Transform';
+import PhotoService from '@/domain/photo/PhotoService';
 
 export default {
   components: {
@@ -49,6 +53,7 @@ export default {
       title: 'Alura Pictures',
       photos: [],
       filter: '',
+      menssage: '',
     };
   },
 
@@ -65,15 +70,28 @@ export default {
 
   methods: {
     remove(photo) {
-      alert('Are you sure you want to delete ' + photo.title + '?');
+      this.service
+        .delete(photo._id)
+        .then(
+            () => {
+              let index = this.photos.indexOf(photo);
+              this.photos.splice(index, 1);
+              this.menssage = 'Foto removida com sucesso'
+          },
+          err => {
+            this.menssage = 'Não foi possível remover a foto';
+            console.log(err);
+          }
+        );
     },
   },
 
   created() {
-    this.$http
-      .get('http://localhost:3000/v1/fotos')
-      .then(res => res.json())
-      .then(fotos => (this.photos = fotos), err => console.log(err));
+    this.service = new PhotoService(this.$resource);
+
+    this.service
+      .list()
+      .then(fotos => this.photos = fotos, err => console.log(err));
   },
 };
 </script>

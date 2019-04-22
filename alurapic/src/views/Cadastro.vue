@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     h2.center Cadastro
-    h2.center {{ photo.title }}
+    h2.center
     form(
       @submit.prevent='addPhoto()'
     )
@@ -39,7 +39,7 @@
         )
       div.center
         router-link(
-          to='/'
+          :to={name: 'Home'}
         )
           Botao.btnLeft(
           typeBtn='button',
@@ -57,7 +57,8 @@
 <script>
 import ImagemResponsiva from '@/components/shared/ImagemResponsiva.vue';
 import Botao from '@/components/shared/Botao.vue';
-import Photo from '@/domain/Photo';
+import Photo from '@/domain/photo/Photo';
+import PhotoService from '@/domain/photo/PhotoService';
 
 export default {
   components: {
@@ -73,11 +74,15 @@ export default {
 
   methods: {
     addPhoto() {
-      this.$http
-        .post('http://localhost:3000/v1/fotos', this.photo)
+      this.service
+        .add(this.photo)
         .then(() => this.photo = new Photo(), err => console.log(err));
     }
   },
+
+  created() {
+    this.service = new PhotoService(this.$resource);
+  }
 };
 </script>
 

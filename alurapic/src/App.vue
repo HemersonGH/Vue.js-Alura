@@ -21,10 +21,11 @@ export default {
       router,
       routes:
       [
-        { path: '/', name: 'Home' },
-        { path: '/cadastro', name: 'Cadastro' },
-        { path: '/about', name: 'About' },
-      ],
+        { path: '/', name: 'Home', menu: true},
+        { path: '/cadastro', name: 'Cadastro', menu: true },
+        { path: '/about', name: 'About', menu: true },
+        { path: '*', menu: false },
+      ].filter(route => route.menu),
     };
   },
 };
