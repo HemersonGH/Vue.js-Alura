@@ -7,7 +7,16 @@
 
 <script>
 export default {
-  props: ['url', 'title'],
+  props: {
+    url: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+  }
 };
 </script>
 

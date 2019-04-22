@@ -2,6 +2,7 @@
 
 - Curso De Vue.js Alura
 
+#### Módulo I
 <p>Capítulo I:</p>
     <ul>
         <li> Instalar e utilizar o Vue CLI; </li>
@@ -82,4 +83,15 @@
         <li> A aplicar classes condicionalmente; </li>
         <li> A diferença do valor passado para a propriedade de um componente sem bind e com bind; </li>
         <li> A validar propriedades de componentes. </li>
+    </ul>
+
+
+#### Módulo II
+<p>Capítulo I:</p>
+    <ul>
+        <li> A capturar dados inseridos em um formulário;</li>
+        <li> O papel do modificador prevent na submissão de um formulário;</li>
+        <li> A utilizar a diretiva v-model para two-way data binding;</li>
+        <li> A criar e a utilizar modelos;</li>
+        <li> Enviar dados para uma API REST através do método post de $http.</li>
     </ul>

@@ -11,11 +11,11 @@
         v-for="photo of photosWithFilter" :key="photo"
       )
         Panel(
-          :title="photo.titulo"
+          :title="photo.title"
         )
           ImagemResponsiva(
             :url='photo.url',
-            :title='photo.titulo',
+            :title='photo.title',
             v-my-Transform:scale.animate='1.2'
           )
           Botao(
@@ -57,7 +57,7 @@ export default {
       if (this.filter) {
         const exp = new RegExp(this.filter.trim(), 'i');
 
-        return this.photos.filter(foto => exp.test(foto.titulo));
+        return this.photos.filter(foto => exp.test(foto.title));
       }
       return this.photos;
     },
@@ -65,7 +65,7 @@ export default {
 
   methods: {
     remove(photo) {
-      alert('Are you sure you want to delete ' + photo.titulo + '?');
+      alert('Are you sure you want to delete ' + photo.title + '?');
     },
   },
 

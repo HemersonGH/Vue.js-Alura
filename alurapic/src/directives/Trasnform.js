@@ -5,9 +5,7 @@ Vue.directive('my-Transform', {
     let current = 0;
 
     el.addEventListener('click', function () {
-
       let increment = binding.value || 90;
-
       let efectStyle;
 
       if (!binding.arg || binding.arg == 'rotate') {
