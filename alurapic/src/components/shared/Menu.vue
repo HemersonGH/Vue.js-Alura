@@ -3,17 +3,18 @@
     nav
       ul
         li(
-          v-for='route in routes'
+          v-for='(route, index) in rotas'
         )
           router-link(:to='route.path') {{ route.name }}
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
-  props: {
-    routes: {
-      type: Array,
-      required: true,
+  computed: {
+    rotas() {
+      return router.options.routes.filter(route => route.menu);
     },
   },
 };
@@ -21,4 +22,4 @@ export default {
 
 <style scoped>
 
-</style>
+</style>/

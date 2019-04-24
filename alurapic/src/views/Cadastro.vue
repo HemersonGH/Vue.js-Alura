@@ -37,7 +37,7 @@
           autocomplete='off',
           v-model.lazy='photo.url',
           v-validate,
-          data-vv-rules='required|min:3|max:50'
+          data-vv-rules='required|min:3|max:1000'
         )
         span.error(
           v-show="errors.has('url')"

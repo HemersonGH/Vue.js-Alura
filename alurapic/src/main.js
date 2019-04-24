@@ -1,21 +1,17 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import VeeValidate from 'vee-validate';
+import VeeValidate, { Validator } from 'vee-validate';
+import ptBr from 'vee-validate/dist/locale/pt_BR';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import './directives/Trasnform';
-import messages from './pt_BR';
 
 Vue.use(VueResource);
+Validator.localize('pt_BR', ptBr);
 Vue.use(VeeValidate, {
   locale: 'pt_BR',
-  dictionary: {
-    pt_BR: {
-      messages: messages,
-    },
-  },
 });
 
 Vue.config.productionTip = false;

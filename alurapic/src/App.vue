@@ -1,33 +1,16 @@
 <template lang="pug">
   div.body
-    Menu(
-      :routes='routes'
-    )
+    Menu
     transition(name='page')
       router-view
 </template>
 
 <script>
-import router from '@/router';
 import Menu from '@/components/shared/Menu.vue';
 
 export default {
   components: {
     Menu,
-  },
-
-  data() {
-    return {
-      router,
-      routes:
-      [
-        { path: '/', name: 'Home', menu: true },
-        { path: '/cadastro', name: 'Cadastro', menu: true },
-        { path: '/cadastro/:id', name: 'Altera', menu: false },
-        { path: '/about', name: 'About', menu: true },
-        { path: '*', menu: false },
-      ].filter(route => route.menu),
-    };
   },
 };
 </script>

@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 
-const Cadastro = () => System.import('./views/Cadastro.vue');
+const Cadastro = () => import('./views/Cadastro.vue');
 
 Vue.use(Router);
 

@@ -117,3 +117,17 @@
         <li> As diretivas v-if e v-else; </li>
         <li> Diferença ente v-if/v-else e v-show. </li>
     </ul>
+
+<p>Capítulo IV:</p>
+<ul>
+    <li> A baixar e registrar o módulo VeeValidade; </li>
+    <li> Validação através de template; </li>
+    <li> A lidar com localização. </li>
+</ul>
+
+<p>Capítulo V:</p>
+<ul>
+    <li> Gerar os arquivos de distribuição do nosso projeto; </li>
+    <li> A realizar o deploy localmente; </li>
+    <li> A realizar code splitting e lazy loading. </li>
+</ul>
